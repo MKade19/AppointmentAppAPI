@@ -1,0 +1,30 @@
+Back-end (Python Django)
+
+DBMS of your choice.
+
+Please provide 4 modals (Customer, User (employee), Appointment).
+      
+Customer (
+id, fullname, email, phone, address, appointments
+)
+Employee (
+id, fullname, email, phone, address, department, appointments
+)
+Departments (
+id, fullname, address, employees
+)
+Appointment (
+id, date, start, end, employee, customer
+)
+
+Provide JWT auth.
+
+Provide REST API (GET, POST, PUT, DELETE).
+
+Roles
+	Admin: Full access
+	Doctor: Access to own appointments, Read access only to all DB
+Reception: Access to create/edit/delete an appointment and customer.
+Only Admin has permission to add/edit/delete an Employee!
+
+python manage.py runserver
