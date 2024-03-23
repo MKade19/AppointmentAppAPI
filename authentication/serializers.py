@@ -58,9 +58,8 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         employee_from_db = Employee.objects.filter(email=validated_data['email']).first()
         
-        if employee_from_db == None:
-            raise serializers.ValidationError(
-                {"employee": "Employee does not exist. Ask admin to add employee with this email."})
+        if employee_from_db != None:
+            raise serializers.ValidationError({ "employee": "Employee does not exist." })
 
         user = User.objects.create(
             email = validated_data['email'],
