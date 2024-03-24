@@ -40,13 +40,14 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(
-        write_only=True, required=True, validators=[validate_password])
+    password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     confirmPassword = serializers.CharField(write_only=True, required=True)
+    # employee = serializers.IntegerField(required=False)
 
     class Meta:
         model = User
         fields = ('email', 'password', 'confirmPassword')
+
 
     def validate(self, attrs):
         if attrs['password'] != attrs['confirmPassword']:
@@ -58,12 +59,13 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         employee_from_db = Employee.objects.filter(email=validated_data['email']).first()
         
-        if employee_from_db != None:
+        if employee_from_db == None:
             raise serializers.ValidationError({ "employee": "Employee does not exist." })
 
         user = User.objects.create(
             email = validated_data['email'],
-            employee = employee_from_db
+            employee = employee_from_db,
+            username = validated_data['email']
         )
 
         user.set_password(validated_data['password'])

@@ -5,7 +5,7 @@ from employees.models import Employee
 
 class User(AbstractUser):
     email = models.EmailField(unique=True)
-    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, default=-1)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, default=-1, null=True, blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['employee']

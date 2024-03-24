@@ -49,6 +49,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'appointmentApp.urls'
 
+# CORS SETUP
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
