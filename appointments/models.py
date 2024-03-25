@@ -6,5 +6,5 @@ class Appointment(models.Model):
     date = models.DateTimeField()
     start = models.TimeField()
     end = models.TimeField()
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    employee = models.ForeignKey(User, on_delete=models.PROTECT)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)

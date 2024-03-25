@@ -1,10 +1,7 @@
 from django.urls import path
 from . import views
 from rest_framework import routers
-
-from rest_framework_simplejwt.views import (
-    TokenRefreshView,
-)
+from rest_framework_simplejwt.views import TokenRefreshView
 
 router = routers.SimpleRouter()
 router.register('groups', views.GroupViewSet, basename='groups')
