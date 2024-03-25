@@ -2,8 +2,8 @@ import jwt
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.conf import settings
-from .models import User
 from .serializers import MyTokenObtainPairSerializer, RegisterSerializer
+from users.models import User
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response

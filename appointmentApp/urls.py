@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from employees.views import EmployeeViewSet 
+from users.views import UserViewSet 
 from departments.views import DepartmentViewSet
 from customers.views import CustomerViewSet
 from appointments.views import AppointmentViewSet
@@ -10,7 +10,7 @@ from authentication.urls import urlpatterns as auth_urls
 BASE_URL = 'appointment-app/api/'
 
 router = routers.SimpleRouter()
-router.register('employees', EmployeeViewSet, basename='employees')
+router.register('users', UserViewSet, basename='users')
 router.register('departments', DepartmentViewSet, basename='departments')
 router.register('customers', CustomerViewSet, basename='customers')
 router.register('appointments', AppointmentViewSet, basename='appointments')

@@ -1,10 +1,10 @@
 from django.db import models
-from employees.models import Employee
+from users.models import User
 from customers.models import Customer
 
 class Appointment(models.Model):
     date = models.DateTimeField()
     start = models.TimeField()
     end = models.TimeField()
-    employee = models.ForeignKey(Employee, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
