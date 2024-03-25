@@ -1,0 +1,62 @@
+[
+
+  {
+    "model": "roles.Role",
+    "pk": 1,
+    "fields": {
+      "name": "Admin",
+      "description": "Full access",
+      "permission_department": "editable",
+      "permission_employee": "editable",
+      "permission_appointment": "editable",
+      "permission_customer": "editable"
+    }
+  },
+  {
+    "model": "roles.Role",
+    "pk": 2,
+    "fields": {
+      "name": "Doctor",
+      "description": "Read access only to all DB",
+      "permission_department": "readonly",
+      "permission_employee": "readonly",
+      "permission_appointment": "readonly",
+      "permission_customer": "readonly"
+    }
+  },  
+  {
+    "model": "roles.Role",
+    "pk": 3,
+    "fields": {
+      "name": "Reception",
+      "description": "Access to appointment and customer",
+      "permission_department": "none",
+      "permission_employee": "none",
+      "permission_appointment": "editable",
+      "permission_customer": "editable"
+    }
+  },
+    {
+        "model": "departments.Department",
+        "pk": 1,
+        "fields": {
+          "name": "IT",
+          "address": "Office 15"
+        }
+      },
+
+    {
+      "model": "users.User",
+      "pk": 1,
+      "fields": {
+        "fullname": "Appointment Administrator",
+        "email": "appointment_admin@neoviso.com",
+        "phone": "+375-29-6594865",
+        "address": "246050 Belarus, Gomel, Bauman Street, 4",
+        "department": "1",
+        "role": "1",
+        "password": "pbkdf2_sha256$720000$M4aeX8PPC5WpQl47IthUcf$OY6NuDlr/ukuE2deSzrtY906gchur73tJDTnz7Mz/Nk="
+      }
+    }
+
+  ]

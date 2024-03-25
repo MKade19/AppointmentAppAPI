@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ('auth', '0012_alter_user_first_name_max_length'),
         ('departments', '0002_alter_department_address'),
+        ('roles', '0002_alter_role_description')
     ]
 
     operations = [
@@ -36,6 +37,7 @@ class Migration(migrations.Migration):
                 ('phone', models.CharField(max_length=20)),
                 ('address', models.CharField(max_length=50)),
                 ('department', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='departments.department')),
+                ('role', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='roles.role')),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.group', verbose_name='groups')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.permission', verbose_name='user permissions')),
             ],
