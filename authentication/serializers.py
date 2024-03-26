@@ -10,7 +10,7 @@ class UserTokenSerializer(serializers.ModelSerializer):
     groups = serializers.PrimaryKeyRelatedField(queryset=Group.objects.all(), many=True)
     class Meta:
         model = User
-        fields = [ 'id', 'email', 'fullname', 'groups' ]
+        fields = [ 'id', 'email', 'fullname', 'groups', 'role' ]
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):

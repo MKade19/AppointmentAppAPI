@@ -9,7 +9,7 @@ class User(AbstractUser):
     email = models.EmailField(max_length=254, unique=True)
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=50)
-    department = models.ForeignKey(Department, on_delete=models.PROTECT)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
     role = models.ForeignKey(Role, on_delete=models.PROTECT)
     
     USERNAME_FIELD = 'email'

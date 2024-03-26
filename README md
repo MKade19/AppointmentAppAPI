@@ -1,3 +1,12 @@
+## How to start
+
+1. Clone `https://github.com/MKade19/appointmentAppAPI/tree/main` to local
+2. Run `python manage.py migrate`
+3. Run `python manage.py loaddata ./initial-dataload.json`
+4. Run `python manage.py runserver`
+
+## Initial requirements
+
 Back-end (Python Django)
 
 DBMS of your choice.
@@ -26,7 +35,3 @@ Roles
 	Doctor: Access to own appointments, Read access only to all DB
 Reception: Access to create/edit/delete an appointment and customer.
 Only Admin has permission to add/edit/delete an Employee!
-
-python manage.py runserver
-
-python manage.py migrate
