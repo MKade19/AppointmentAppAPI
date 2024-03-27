@@ -7,7 +7,6 @@ from .serializers import AppointmentSerializer
 
 
 class CustomPagination(PageNumberPagination):
-    # page_size = 5
     page_size_query_param = 'page_count'
     max_page_size = 1000
 
