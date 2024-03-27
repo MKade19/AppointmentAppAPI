@@ -3,7 +3,9 @@
 1. Clone `https://github.com/MKade19/appointmentAppAPI/tree/main` to local
 2. Run `python manage.py migrate`
 3. Run `python manage.py loaddata ./initial-dataload.json`
-4. Run `python manage.py runserver`
+4. Run `python -m pip install -U channels`
+5. Run `pip install channels==3.0.5`
+6. Run `python manage.py runserver`
 
 ## Initial requirements
 
